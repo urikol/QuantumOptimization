@@ -1,0 +1,28 @@
+name: Build & verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Installs the toolchain pinned in `lean-toolchain`, fetches the Mathlib
+      # cache, and runs `lake build` over the whole library.
+      - name: Build
+        uses: leanprover/lean-action@v1
+        with:
+          use-mathlib-cache: true
+
+      # Fails if any headline theorem depends on an axiom outside
+      # {propext, Classical.choice, Quot.sound} — in particular, on `sorryAx`.
+      - name: Axiom-cleanliness check
+        run: lake env lean test/AxiomCheck.lean
+
+      # Fails unless every item in the human-audit file is certified ([x]).
+      - name: Human-audit gate
+        run: lake env lean QuantumOptimization/QAOA/IsingChain/Achievability/HumanAudit/Human_audit_achievability.lean

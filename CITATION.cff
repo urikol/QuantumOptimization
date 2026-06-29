@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the accompanying paper (see preferred-citation)."
+title: "QuantumOptimization: machine-verified results in quantum optimization (Lean 4)"
+type: software
+authors:
+  - given-names: Uri
+    family-names: Kol
+  - given-names: Maor
+    family-names: Ben-Shahar
+  - given-names: Kfir
+    family-names: Sulimany
+  - given-names: Dirk
+    family-names: Englund
+license: Apache-2.0
+version: 0.1.0
+repository-code: "https://github.com/urikol/QuantumOptimization"
+preferred-citation:
+  type: article
+  title: "A Machine-Verified Proof of a Quantum-Optimization Conjecture"
+  authors:
+    - given-names: Uri
+      family-names: Kol
+    - given-names: Maor
+      family-names: Ben-Shahar
+    - given-names: Kfir
+      family-names: Sulimany
+    - given-names: Dirk
+      family-names: Englund
+  year: 2026
+  # journal / arXiv identifier to be filled in once available

@@ -1,0 +1,35 @@
+{
+  // ─── Audit-mark line coloring (HumanAudit files) ───────────────────────────
+  // Requires the "Highlight" extension:  fabiospampinato.vscode-highlight
+  // Install it (VS Code will offer to, see .vscode/extensions.json) and reload.
+  // The coloring updates LIVE as you type the mark — add the `x` and the line
+  // turns green immediately; no save or rebuild needed.
+  //
+  //   -- [x]  audited            → green line
+  //   -- [!]  needs discussion   → amber line
+  //   -- [ ]  not yet audited    → left neutral (so adding `x` is what lights up)
+  //
+  // Scoped to .../HumanAudit/*.lean so `[x]` comments in other files are untouched.
+  "highlight.regexes": {
+    "(-- \\[x\\])": {
+      "filterFileRegex": ".*HumanAudit.*\\.lean$",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "rgba(46, 160, 67, 0.18)",
+          "overviewRulerColor": "rgba(46, 160, 67, 0.85)"
+        }
+      ]
+    },
+    "(-- \\[!\\])": {
+      "filterFileRegex": ".*HumanAudit.*\\.lean$",
+      "decorations": [
+        {
+          "isWholeLine": true,
+          "backgroundColor": "rgba(210, 153, 34, 0.18)",
+          "overviewRulerColor": "rgba(210, 153, 34, 0.85)"
+        }
+      ]
+    }
+  }
+}

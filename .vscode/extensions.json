@@ -1,0 +1,7 @@
+{
+  // VS Code will offer to install these when the repo is opened.
+  // "Highlight" powers the audit-mark line coloring configured in settings.json.
+  "recommendations": [
+    "fabiospampinato.vscode-highlight"
+  ]
+}

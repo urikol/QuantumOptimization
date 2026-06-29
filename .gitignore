@@ -1,0 +1,7 @@
+.lake/
+lake-packages/
+# lake-manifest.json is tracked: it pins the exact Mathlib revision so CI and
+# collaborators build against the identical dependency set (reproducible builds).
+
+# macOS Finder metadata
+.DS_Store
